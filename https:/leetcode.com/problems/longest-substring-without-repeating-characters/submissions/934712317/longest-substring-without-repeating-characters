@@ -1,0 +1,33 @@
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function(s) {
+    var obj={}
+    var count=0
+    var max=0
+    for(var i=0;i<s.length;i++){
+
+         if(obj[s[i]]==undefined)
+         {
+             obj[s[i]]=i
+             count++
+             if(max<count){
+                 console.log(count,s[i])
+                 max=count
+                 
+             }
+         }
+         else{
+           
+          i=obj[s[i]]
+          obj={}
+          count=0
+             
+         }
+        
+        
+    }
+
+    return max
+};
