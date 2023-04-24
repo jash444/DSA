@@ -1,0 +1,35 @@
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var longestPalindrome = function(s) {
+ //console.log(s.length)
+   
+
+   
+
+var str=0
+var max=-999
+    for(var i=0;i<s.length;i=i+0.5){
+
+        var back=Math.ceil(i-1)
+        var front=Math.floor(i+1)
+        
+       while(back>=0&&front<s.length){
+           if(s[back]==s[front]){
+               back--
+               front++
+           }
+           else{
+               
+               break
+           }
+       }
+
+      if (front - back - 1 > max){
+            max = front - back - 1;
+            str = back + 1;
+        }
+    }
+return s.slice(str, str + max);
+};
