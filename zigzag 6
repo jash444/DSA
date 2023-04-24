@@ -1,0 +1,62 @@
+/**
+ * @param {string} s
+ * @param {number} numRows
+ * @return {string}
+ */
+var convert = function(s, numRows) {
+    var d=numRows
+    if(d==1){
+        return s
+    }
+    var data=Array(numRows).fill("")
+    // for(let i=0;i<s.length;i=i+2*d-2){
+    //    console.log(i)  
+    // }
+ var i=0;
+
+    while(i<s.length){
+      //  console.log(i)
+      
+
+var count=0;
+        for(var j=i;j<i+d;j++){
+          if(s[j]==undefined){
+
+          }
+          else{
+             data[count]=data[count]+s[j]
+          }
+          count++
+        }
+        var k=j
+        //j=j--
+        console.log(j)
+        var count=numRows-2
+        var up=i+2*d-2
+        // if(count<0){
+        //     count=0
+        //     up=2
+        // }
+       
+        for(var l=j;l<up;l++){
+           
+           if(s[l]==undefined){
+
+          }
+          else{
+             data[count]=data[count]+s[l]
+          }
+          count--
+             
+        }
+
+          i=i+2*d-2
+        if(i==0){
+            break
+        }
+    }
+    console.log(data)
+    return data.join("")
+
+    
+};
