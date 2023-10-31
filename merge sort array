@@ -1,0 +1,76 @@
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number}
+ */
+var findMedianSortedArrays = function(nums1, nums2) {
+
+
+// if(nums1.length==0){
+//     if(nums2.lenght%2==0){
+//      return   nums2[nums2.lenght/2]+nums2[(nums2.length/2)-1]
+//     }
+    
+// }
+// if(nums2.length==0){
+//     if(nums1.lenght%2==0){
+//      return   nums1[nums1.lenght/2]+nums1[(nums1.length/2)-1]
+//     }
+    
+// }
+
+var i=0;
+var j=nums1.length;
+var k=0;
+var l=nums2.length    
+var ans=[]
+//console.log(111)
+while(i<j||k<l){
+    if(nums1[i]<=nums2[k]){
+        if(nums1[i]==undefined ){
+
+        }
+        else{
+            ans.push(nums1[i])
+        }
+        
+       // console.log(nums1[i+1])
+           if(nums1[i+1]==undefined){
+          for(let m=k;m<nums2.length;m++){
+              ans.push(nums2[m])
+          }
+          break
+          }
+        i++
+    }
+    else{
+          if(nums2[k]==undefined ){
+
+        }
+        else{
+                    ans.push(nums2[k])
+
+        }
+        // ans.push(nums2[k])
+          if(nums2[k+1]==undefined){
+          for(let m=i;m<nums1.length;m++){
+              ans.push(nums1[m])
+          }
+          break
+          }
+         k++
+    }
+    
+}
+ //console.log(ans)
+ var sum=0
+if(ans.length%2==0){
+    sum =(ans[ans.length/2]+ans[(ans.length/2)-1])/2
+}
+else{
+   // console.log(Math.floor(ans.length/2))
+    var fun=
+   sum=ans[Math.floor(ans.length/2)]
+}
+return sum.toFixed(4);
+};
