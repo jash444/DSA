@@ -27,3 +27,23 @@
          }
      }
         return [-1]
+
+
+
+another solution but same approch above code need one more loop but here there is no need of it
+       // let i=0;
+        let j=0;
+        let sum= arr[i];
+        if(s<=0) return [-1];
+        while(j<n){
+            if(sum === s) return [i+1,j+1];
+            else if(sum<s){
+                j++;
+                sum += arr[j];
+            }
+            else{
+                sum -= arr[i];
+                i++;
+            }
+        }
+        return [-1];//
