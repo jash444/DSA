@@ -1,0 +1,29 @@
+      var left=0;
+       var right=0;
+       var sum=0;
+       if(s==0){
+           return [-1]
+       }
+       while(left<n&&right<n){
+           if(sum==s){
+               left++
+              return [left,right]
+           }
+           if(sum>s){
+               sum=sum-arr[left]
+               left++
+           }
+           if(sum<s){
+               sum=sum+arr[right]
+               right++
+           }
+       }
+     for(var i=left;i<right;i++){
+         if(sum==s){
+             return [i+1,right]
+         }
+         else{
+             sum=sum-arr[i]
+         }
+     }
+        return [-1]
