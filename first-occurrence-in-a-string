@@ -1,0 +1,37 @@
+/**
+ * @param {string} haystack
+ * @param {string} needle
+ * @return {number}
+ */
+var strStr = function(haystack, needle) {
+    var count=0
+    var sec=0
+   let i=0;j=0;
+   if(needle.length>haystack.length){
+       return -1
+   }
+
+   while(i<haystack.length){
+       let temp=i
+        j=0
+           while(j<needle.length){
+               if(haystack[i]==needle[j]){
+                   j++
+                   i++
+                   if(j===needle.length){
+                       console.log(temp,"kk")
+                       return temp
+                   }
+               }
+               else{
+                   j++
+                   i=temp
+                   break
+               }
+           }
+           i++
+       
+   }
+   return -1
+    
+};
