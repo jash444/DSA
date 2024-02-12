@@ -74,3 +74,70 @@ else{
 }
 return sum.toFixed(4);
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//another
+    merge(arr, l, m, r)
+    {
+         // Your code here
+        // console.log(arr,l,m,r)
+         let left=arr.slice(l,m+1)
+         let right=arr.slice(m+1,r+1)
+        // console.log(left,right,l,m,r)
+         var i=0
+         var j=0
+         var k=l
+        while(i<left.length && j <right.length){
+             if(left[i]<=right[j]){
+                 arr[k]=left[i]
+                 i++
+             }
+             else{
+                 arr[k]=right[j]
+                 j++
+             }
+             k++
+         }
+         while(i<left.length){
+             arr[k]=left[i]
+             i++
+             k++
+         }
+          while(j<right.length){
+             arr[k]=right[j]
+             j++
+             k++
+         }
+   
+         return
+         
+    }
+    
+    mergeSort(arr, l, r){
+     //code here
+     if(l>=r){
+         return 
+     }
+     var m=Math.floor((l+r)/2)
+     this.mergeSort(arr,l,m)
+     this.mergeSort(arr,m+1,r)
+     this.merge(arr,l,m,r)
+     
+    }
