@@ -1,0 +1,19 @@
+class Solution
+{
+   //Function to sort the array using bubble sort algorithm.
+   bubbleSort(arr,n){
+    //code here
+    if(n==1){
+        return
+    }
+   
+        for(var j=0;j<arr.length-1;j++){
+            if(arr[j]>arr[j+1]){
+                [arr[j],arr[j+1]]=[arr[j+1],arr[j]]
+            }
+        }
+      this.bubbleSort(arr,n-1)
+    
+   }
+    
+}
